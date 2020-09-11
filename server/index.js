@@ -4,6 +4,7 @@ const massive = require('massive')
 const session = require('express-session')
 const authController = require('./controllers/authController')
 const treasureController = require('./controllers/treasureController')
+const auth = require('./middleware/authMiddleware')
 
 
 const app = express()
@@ -23,8 +24,9 @@ app.use(
 app.post('/auth/register', authController.register)
 app.post('/auth/login', authController.login)
 app.get('/auth/logout', authController.logout)
+
 app.get('/api/treasure/dragon', treasureController.dragonTreasure)
-app.get('/api/treasure/user', treasureController.getUserTreasure)
+app.get('/api/treasure/user', auth.usersOnly, treasureController.getUserTreasure)
 
 
 massive({
