@@ -24,6 +24,7 @@ app.post('/auth/register', authController.register)
 app.post('/auth/login', authController.login)
 app.get('/auth/logout', authController.logout)
 app.get('/api/treasure/dragon', treasureController.dragonTreasure)
+app.get('/api/treasure/user', treasureController.getUserTreasure)
 
 
 massive({
