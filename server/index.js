@@ -7,10 +7,12 @@ const treasureController = require('./controllers/treasureController')
 const auth = require('./middleware/authMiddleware')
 
 
-const app = express()
+
 const PORT = 4000
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env
+
+const app = express()
 
 app.use(express.json())
 app.use(

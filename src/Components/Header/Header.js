@@ -40,13 +40,9 @@ export default class Header extends Component {
       })
       
     })
-    .catch(err => {
-      this.setState({
-        username: '',
-        password: ''
-      })
+    .catch(err =>
       alert(err.response.request.response)
-    })
+    )
   }
 
   register() {

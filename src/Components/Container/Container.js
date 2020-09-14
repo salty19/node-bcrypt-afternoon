@@ -49,7 +49,7 @@ export default class Container extends Component {
         treasures: { ...this.state.treasures,
         user: treasure.data,}
       })
-    }).catch( err => alert(error.response.request.response))
+    }).catch( error => alert(error.response.request.response))
   }
 
   addMyTreasure(newMyTreasure) {

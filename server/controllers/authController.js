@@ -48,11 +48,10 @@ module.exports = {
             id: user.id,
             username: user.username
         }
-
-        res.status(200).send(req.session.user)
+        return res.send(req.session.user)
     },
 
-    logout: async (req, res) => {
+    logout: (req, res) => {
 
         req.session.destroy()
         return res.sendStatus(200) 
